@@ -1,5 +1,6 @@
-<button mat-button [matMenuTriggerFor]="aboveMenu">My Gpio</button>
+<button mat-button [matMenuTriggerFor]="aboveMenu" aria-label="General menu for GPIO">
+  My Gpio
+</button>
 <mat-menu #aboveMenu="matMenu" yPosition="above">
   <button mat-menu-item>Clear Gpio</button>
 </mat-menu>
-
