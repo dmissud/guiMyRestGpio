@@ -1,0 +1,44 @@
+.docs-header-background {
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+}
+
+.docs-header-background::before {
+  content: "";
+  position: absolute;
+  background-image: url("../../../assets/img/homepage/angular-white-transparent.svg");
+  background-size: 130px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-position: 80% 40px;
+  opacity: 0.2;
+}
+
+.docs-header-section {
+  width: 90%;
+  position: absolute;
+  z-index: 0;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.docs-header-headline h1 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 30px;
+  margin: 15px 5px;
+}
+.docs-header-headline h2 {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 18px;
+  margin: 15px 0 25px 0;
+}
+
+/*# sourceMappingURL=gpio-shell.component.css.map */

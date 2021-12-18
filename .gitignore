@@ -47,3 +47,5 @@ Thumbs.db
 /guiMyRestGpio.iml
 /yarn.lock
 /.yarnrc.yml
+
+package-lock.json

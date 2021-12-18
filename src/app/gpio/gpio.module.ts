@@ -10,16 +10,19 @@ import {HttpClientModule} from '@angular/common/http';
 import {TopmenuComponent} from './topmenu/topmenu.component';
 import {GpiopinsComponent} from './gpiopins/gpiopins.component';
 import {StoreModule} from "@ngrx/store";
+import { GpioShellComponent } from './gpio-shell/gpio-shell.component';
 
 @NgModule({
   declarations: [
     TopmenuComponent,
-    GpiopinsComponent
+    GpiopinsComponent,
+    GpioShellComponent
   ],
-  exports: [
-    TopmenuComponent,
-    GpiopinsComponent
-  ],
+    exports: [
+        TopmenuComponent,
+        GpiopinsComponent,
+        GpioShellComponent
+    ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,

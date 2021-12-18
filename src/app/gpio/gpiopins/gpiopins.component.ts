@@ -1,30 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {GpioPin} from "../gpio-pin";
+import {Store} from "@ngrx/store";
+import {GpioService} from "../gpio.service";
 
-export interface GpioPins {
-  position: number;
-  name: string;
-  address: number;
-  state: string;
-}
-
-const ELEMENT_DATA: GpioPins[] = [
-  {position: 1, name: 'Led', address: 22, state: '0'},
-  {position: 2, name: 'Button', address: 24, state: '0'}
-];
 
 @Component({
   selector: 'app-gpiopins',
   templateUrl: './gpiopins.component.html',
-  styleUrls: ['./gpiopins.component.css']
+  styleUrls: ['./gpiopins.component.scss']
 })
 export class GpiopinsComponent implements OnInit {
-  displayedColumns: string[] = ['demo-position', 'demo-name', 'demo-address', 'demo-state'];
-  dataSource = ELEMENT_DATA;
+  gpio: GpioPin[] = [{globalName: "", name: "", address: 1, mode: "", pinName: "", state: "", type: ""}];
 
-  constructor() {
+  displayedColumns: string[] = ['demo-name', 'demo-type', 'demo-address', 'demo-state'];
+  errorMessage: string | undefined;
+
+  constructor(private store: Store<any>, private gpioService: GpioService) {
   }
 
   ngOnInit(): void {
+    this.gpioService.getGpio().subscribe({
+      next: (gpio: GpioPin[]) => this.gpio = gpio,
+      error: err => this.errorMessage = err
+    });
+
   }
 
 }
