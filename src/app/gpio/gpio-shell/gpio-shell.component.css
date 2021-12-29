@@ -4,6 +4,10 @@
   height: 200px;
 }
 
+.form-section {
+  margin: 12px 0;
+}
+
 .docs-header-background::before {
   content: "";
   position: absolute;

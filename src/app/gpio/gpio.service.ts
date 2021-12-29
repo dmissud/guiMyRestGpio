@@ -16,6 +16,11 @@ export class GpioService {
     if (this.gpio) {
       return of(this.gpio);
     }
+    return this.loadListGpio();
+  }
+
+
+  private loadListGpio(): Observable<GpioPin[]> {
     return this.http.get<GpioPin[]>(this.gpioApiUrl+'/provision/list')
       .pipe(
         tap(data => console.log(JSON.stringify(data))),

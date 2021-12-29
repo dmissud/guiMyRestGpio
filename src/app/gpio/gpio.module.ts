@@ -11,6 +11,7 @@ import {TopmenuComponent} from './topmenu/topmenu.component';
 import {GpiopinsComponent} from './gpiopins/gpiopins.component';
 import {StoreModule} from "@ngrx/store";
 import { GpioShellComponent } from './gpio-shell/gpio-shell.component';
+import {gpioReducer} from "./state/gpio.reducer";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { GpioShellComponent } from './gpio-shell/gpio-shell.component';
     MatNativeDateModule,
     MaterialModule,
     ReactiveFormsModule,
-    StoreModule.forFeature('gpio', {})
+    StoreModule.forFeature('gpio', gpioReducer)
   ],
   providers: [],
   bootstrap: [GpiopinsComponent, TopmenuComponent]

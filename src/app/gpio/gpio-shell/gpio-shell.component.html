@@ -12,8 +12,12 @@
 <div class='row'>
   <div class='col-md-4'>
     <app-gpiopins></app-gpiopins>
-  </div>
-  <div class='col-md-8'>
-    Next truc
+    <section class="form-section" [formGroup]="toppings">
+      <p><mat-checkbox formControlName="fullInformation" (change)="checkChanged()">Information complète</mat-checkbox></p>
+    </section>
+    <section class="form-section" [formGroup]="toppings">
+      <h4>You chose:</h4>
+      {{toppings.value | json}}
+    </section>
   </div>
 </div>

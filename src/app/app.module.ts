@@ -4,7 +4,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {GpioModule} from "./gpio/gpio.module";
-import { StoreModule } from '@ngrx/store';
+import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -14,7 +16,12 @@ import { StoreModule } from '@ngrx/store';
     GpioModule,
     BrowserModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({
+      name:'Gpio DBS Tools',
+      maxAge:25,
+      logOnly: environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
